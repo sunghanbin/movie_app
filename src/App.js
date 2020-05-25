@@ -11,10 +11,12 @@ class App extends React.Component {
 
   // 이벤트 메소드 작성
   add = () => {
-    console.log("add");
+    // state 는 직접적으로 값을 변경 불가하다. setter 로 해야함
+    // set 안에서 함수로 state 현재값을 가져올수있다.
+    this.setState((a) => ({ count: a.count + 1 }));
   };
   minus = () => {
-    console.log("minus");
+    this.setState((current) => ({ count: current.count - 1 }));
   };
 
   // calss 는 return 이 아닌 render 를 가지고 있다.
